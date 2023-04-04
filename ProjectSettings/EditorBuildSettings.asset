@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_MonProjet/Scenes/Niveau 3.unity
     guid: d605358f64da4d44da03dde944ca17f2
+  - enabled: 1
+    path: Assets/_MonProjet/Scenes/Fin.unity
+    guid: b1703e24cc9651f40a0317f328c97fdb
   m_configObjects: {}

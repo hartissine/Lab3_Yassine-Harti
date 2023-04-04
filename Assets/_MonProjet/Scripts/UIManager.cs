@@ -42,6 +42,19 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    //private void GestionInstructions()
+    //{
+    //    if (!_enInstructions)
+    //    {
+    //        _Instructions.SetActive(true);
+    //        _enInstructions = true;
+    //    }
+    //    else if (_enInstructions)
+    //    {
+    //        EnleverInstructions();
+    //    }
+    //}
+
     public void ChangerPointage(int p_pointage)
     {
         _txtAccrochages.text = "Accrochages : " + p_pointage.ToString();
@@ -53,4 +66,10 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1;
         _enPause = false;
     }
+
+    //public void EnleverInstructions()
+    //{
+    //    _Instructions.SetActive(false);
+    //    _enInstructions = false;
+    //}
 }
