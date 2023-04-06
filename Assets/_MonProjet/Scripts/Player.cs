@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float _rotation = 200;
     private Rigidbody _rb;  // Variable pour emmagasiner le rigidbody du joueur
 
+    private bool _partieCommence = false;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -30,6 +32,17 @@ public class Player : MonoBehaviour
         float positionZ = Input.GetAxis("Vertical");  // Récupère la valeur de l'axe vertical de l'input manager
         Vector3 direction = new Vector3(positionX, 0f, positionZ);  // Établi la direction du vecteur à appliquer sur le joueur
         _rb.velocity = direction.normalized * Time.fixedDeltaTime * _vitesse;  // Applique la vélocité sur le corps du joueur dans la direction du vecteur
+
+        if (direction != Vector3.zero && !_partieCommence)
+        {
+            _partieCommence = true;
+
+            GestionJeu gestionJeu = FindObjectOfType<GestionJeu>();
+            gestionJeu.SetTempsDepart();
+
+            UIManager uiManager = FindObjectOfType<UIManager>();
+            uiManager.SetDebutPartie();
+        }
 
         if (direction.magnitude >=0.1f) // Condition pour gerer la rotation du player
         {

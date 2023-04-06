@@ -28,11 +28,6 @@ public class GestionJeu : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        _tempsDepart = Time.time;
-    }
-
     private void Update()
     {
         if (SceneManager.GetActiveScene().buildIndex == 4 || SceneManager.GetActiveScene().buildIndex == 0)
@@ -42,7 +37,7 @@ public class GestionJeu : MonoBehaviour
     }
 
     /*
-   * Méthode publique qui permet d'augmenter le pointage de 1
+   * Méthode publique qui permet d'augmenter le pointage 
    */
     public void AugmenterPointage()
     {
@@ -60,6 +55,11 @@ public class GestionJeu : MonoBehaviour
     public float GetTempsDepart()
     {
         return _tempsDepart;
+    }
+
+    public void SetTempsDepart() 
+    {
+        _tempsDepart = Time.time;
     }
 
 
