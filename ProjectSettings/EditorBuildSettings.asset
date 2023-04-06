@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_MonProjet/Scenes/Star.unity
+    path: Assets/_MonProjet/Scenes/Start.unity
     guid: 8965a4cc94ddf40418251713c6e0b39a
   - enabled: 1
     path: Assets/_MonProjet/Scenes/Niveau 1.unity

@@ -8,11 +8,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text _txtAccrochages = default;
     [SerializeField] private TMP_Text _txtTemps = default;
     [SerializeField] private GameObject _menuPause = default;
+
     private bool _enPause;
     private GestionJeu _gestionJeu;
 
 
-    void Start()
+    private void Start()
     {
         _gestionJeu = FindObjectOfType<GestionJeu>();
         _txtAccrochages.text = "Accrochages : " + _gestionJeu.GetPointage();
@@ -42,19 +43,6 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    //private void GestionInstructions()
-    //{
-    //    if (!_enInstructions)
-    //    {
-    //        _Instructions.SetActive(true);
-    //        _enInstructions = true;
-    //    }
-    //    else if (_enInstructions)
-    //    {
-    //        EnleverInstructions();
-    //    }
-    //}
-
     public void ChangerPointage(int p_pointage)
     {
         _txtAccrochages.text = "Accrochages : " + p_pointage.ToString();
@@ -67,9 +55,5 @@ public class UIManager : MonoBehaviour
         _enPause = false;
     }
 
-    //public void EnleverInstructions()
-    //{
-    //    _Instructions.SetActive(false);
-    //    _enInstructions = false;
-    //}
+   
 }
