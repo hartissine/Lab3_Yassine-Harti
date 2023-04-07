@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float _vitesse = 800;
     [SerializeField] private float _rotation = 200;
     private Rigidbody _rb;  // Variable pour emmagasiner le rigidbody du joueur
+    private float _tempsInnactif = 0f;
 
     private bool _partieCommence = false;
 
@@ -16,6 +17,8 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();   // Récupère le rigidbody du Player
+        _tempsInnactif = Time.time;
+        
     }
     
     // Ici on utilise FixedUpdate car les mouvements du joueurs implique le déplacement d'un rigidbody
@@ -36,9 +39,10 @@ public class Player : MonoBehaviour
         if (direction != Vector3.zero && !_partieCommence)
         {
             _partieCommence = true;
+            
 
             GestionJeu gestionJeu = FindObjectOfType<GestionJeu>();
-            gestionJeu.SetTempsDepart();
+            gestionJeu.SetTempsDepart(Time.time - _tempsInnactif);
 
             UIManager uiManager = FindObjectOfType<UIManager>();
             uiManager.SetDebutPartie();

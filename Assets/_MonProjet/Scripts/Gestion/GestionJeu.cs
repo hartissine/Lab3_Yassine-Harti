@@ -10,6 +10,8 @@ public class GestionJeu : MonoBehaviour
     private int _pointage = 0;  
     private float _tempsDepart = 0;
     private float _tempsFinal = 0;
+    private float _tempsInnactif = 0;
+    private bool _premierNiveau = true;
 
     private void Awake()
     {
@@ -57,15 +59,27 @@ public class GestionJeu : MonoBehaviour
         return _tempsDepart;
     }
 
-    public void SetTempsDepart() 
+    public float GetTempsInnactif()
     {
-        _tempsDepart = Time.time;
+        return _tempsInnactif;
     }
 
-
+    public void SetTempsDepart(float tempsInnactif) 
+    {
+        if (_premierNiveau)
+        {
+            _tempsDepart = Time.time;
+            _premierNiveau = false;
+        }
+        else
+        {
+           _tempsInnactif += tempsInnactif;
+        }        
+    }
+    
     public void SetTempsFinal(float p_tempFinal)
     {
-        _tempsFinal = p_tempFinal - _tempsDepart;
+        _tempsFinal = p_tempFinal - _tempsDepart - _tempsInnactif;
     }
 
     public float GetTempsFinal()

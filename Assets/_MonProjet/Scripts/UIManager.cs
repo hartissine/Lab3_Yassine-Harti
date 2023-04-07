@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -16,7 +17,14 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        
         _gestionJeu = FindObjectOfType<GestionJeu>();
+        if (SceneManager.GetActiveScene().buildIndex > 1)
+        {
+        float temps = Time.time - _gestionJeu.GetTempsDepart() - _gestionJeu.GetTempsInnactif();
+        _txtTemps.text = "Temps : " + temps.ToString("f2");
+        }
+
         _txtAccrochages.text = "Accrochages : " + _gestionJeu.GetPointage();
         Time.timeScale = 1;
         _enPause = false;
@@ -27,7 +35,7 @@ public class UIManager : MonoBehaviour
     {
         if (_partieCommence)
         {
-            float temps = Time.time - _gestionJeu.GetTempsDepart();
+            float temps = Time.time - _gestionJeu.GetTempsDepart() - _gestionJeu.GetTempsInnactif();
             _txtTemps.text = "Temps : " + temps.ToString("f2");
         }
 
