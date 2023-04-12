@@ -666,8 +666,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "D\xE9marrer"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0033afa4bfde10c44ad63d743f6e650d, type: 2}
-  m_sharedMaterial: {fileID: 6340683726296508272, guid: 0033afa4bfde10c44ad63d743f6e650d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e5e61a25b0a8ef419588b3bab3f495c, type: 2}
+  m_sharedMaterial: {fileID: 8780729021346864205, guid: 2e5e61a25b0a8ef419588b3bab3f495c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -799,11 +799,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Le but du jeu est d'atteindre la zone de fin le plus rapidement possibles.\n\nDeplacements
-    du joueur aves les touches du clavie  : \u2191\u2193\u2192\u2190 ou w, s, d,
-    a.\n\nChaque Obstacles touch\xE9 devient rouge, et entraine une p\xE9nalit\xE9
-    d'une seconde. Le temps d\xE9marre seulement quand le joueur effectue un mouvement.\n\nLe
-    jeu prend fin apr\xE9s avoir t\xE9rminer tous les niveaux."
+  m_text: "Le but du jeu est d'atteindre la zone de fin le plus rapidement possible.\n\nLe
+    joueur se d\xE9place avec les touches du clavier : \u2191\u2193\u2192\u2190 ou
+    w, s, d, a.\n\nChaque obstacle touch\xE9 devient rouge et entra\xEEne une p\xE9nalit\xE9
+    d'une seconde. Le contour des plateformes n'entra\xEEne pas de p\xE9nalit\xE9,
+    y compris les premiers murs du premier niveau. Le temps d\xE9marre que lorsque
+    le joueur effectue un mouvement.\n\nLe jeu prend fin apr\xE8s avoir t\xE9rmin\xE9
+    tous les niveaux."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0033afa4bfde10c44ad63d743f6e650d, type: 2}
   m_sharedMaterial: {fileID: 6340683726296508272, guid: 0033afa4bfde10c44ad63d743f6e650d, type: 2}
@@ -830,10 +832,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 44.4
   m_fontSizeBase: 50
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 3
@@ -1444,7 +1446,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 64079139}
   m_RootOrder: 0
